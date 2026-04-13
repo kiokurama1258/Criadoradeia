@@ -1,12 +1,11 @@
 [
   "00. Configurações IA Vendedora.json",
-  "01 - agente da clinica.json",
+  "01 - agente da imobiliaria.json",
   "02. Buscar janelas profissional.json",
   "03. Criar evento com profissional.json",
   "04. Buscar agendamentos do contato.json",
   "05. Atualizar agendamento.json",
   "06. Cancelar agendamento.json",
   "07. Escalar humano v2.json",
-  "08. Follow-up qualificados + no-show + lembretes + pós-venda.json",
-  "KANBAN-CLINICAS-INSTALADOR (1).json"
+  "08. Follow-up qualificados + no-show + lembretes + pós-venda.json"
 ]

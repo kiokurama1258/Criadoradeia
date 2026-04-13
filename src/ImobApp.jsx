@@ -36,9 +36,9 @@ function buildProfTable(profs) {
 }
 
 function buildServTable(servs) {
-  let h = "| ID (`id_procedimento`) | Atendimento                     | Duração (min) | Observação                   |\\n  |------------------------|---------------------------------|---------------|------------------------------|";
+  let h = "| ID (`id_atendimento`) | Atendimento                     | Duração (min) | Observação                   |\\n  |-----------------------|---------------------------------|---------------|------------------------------|";
   servs.forEach(p => {
-    h += `\\n  | \`${p.slug}\`${" ".repeat(Math.max(1, 23 - p.slug.length - 3))}| ${p.nome}${" ".repeat(Math.max(1, 32 - p.nome.length))}| ${p.duracao}${" ".repeat(Math.max(1, 14 - String(p.duracao).length))}| ${p.obs}${" ".repeat(Math.max(1, 29 - p.obs.length))}|`;
+    h += `\\n  | \`${p.slug}\`${" ".repeat(Math.max(1, 22 - p.slug.length - 3))}| ${p.nome}${" ".repeat(Math.max(1, 32 - p.nome.length))}| ${p.duracao}${" ".repeat(Math.max(1, 14 - String(p.duracao).length))}| ${p.obs}${" ".repeat(Math.max(1, 29 - p.obs.length))}|`;
   });
   return h;
 }
@@ -65,7 +65,7 @@ function processTemplate(jsonStr, cfg) {
   });
   const pt = /\| ID \(`id_profissional`\).*?\| `patricia-santos`[^|]*\|/s;
   if (pt.test(s)) s = s.replace(pt, buildProfTable(cfg.profs));
-  const st = /\| ID \(`id_procedimento`\).*?\| `avaliacao-imovel`[^|]*\|/s;
+  const st = /\| ID \(`id_atendimento`\).*?\| `avaliacao-imovel`[^|]*\|/s;
   if (st.test(s)) s = s.replace(st, buildServTable(cfg.servs));
   let data;
   try { data = JSON.parse(s); } catch { return s; }
@@ -94,6 +94,9 @@ function processTemplate(jsonStr, cfg) {
           node.parameters.options.systemMessage = node.parameters.options.systemMessage
             .replace(/<\/informacoes-sistema>/, extra + "\n</informacoes-sistema>");
         }
+      }
+      if (node.name === "Resetar atributos" && node.parameters?.assignments) {
+        node.parameters.assignments.assignments = node.parameters.assignments.assignments.map(a => ({ ...a, value: "" }));
       }
     });
   }

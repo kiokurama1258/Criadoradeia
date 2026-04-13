@@ -126,7 +126,7 @@
             {
               "id": "505da86d-3578-43ff-a446-5569a2328142",
               "name": "atributos",
-              "value": "=[\n  {\n    \"chave\": \"data_ultima_consulta\",\n    \"nome_display\": \"Data da última consulta\",\n    \"tipo\": \"text\",\n    \"modelo\": \"contato\",\n    \"descricao\": \"Data da última vez que o paciente visitou a clínica (ex: 2026-02-07)\"\n  }\n]",
+              "value": "=[\n  {\n    \"chave\": \"tipo_interesse\",\n    \"nome_display\": \"Tipo de interesse\",\n    \"tipo\": \"text\",\n    \"modelo\": \"contato\",\n    \"descricao\": \"Tipo de interesse do lead: Compra, Venda ou Locação\"\n  },\n  {\n    \"chave\": \"tipo_imovel\",\n    \"nome_display\": \"Tipo de imóvel\",\n    \"tipo\": \"text\",\n    \"modelo\": \"contato\",\n    \"descricao\": \"Tipo de imóvel de interesse: Casa, Apartamento, Comercial, etc.\"\n  },\n  {\n    \"chave\": \"corretor_preferido\",\n    \"nome_display\": \"Corretor preferido\",\n    \"tipo\": \"text\",\n    \"modelo\": \"contato\",\n    \"descricao\": \"Slug do corretor preferido pelo lead\"\n  }\n]",
               "type": "array"
             }
           ]
@@ -183,7 +183,7 @@
           "value": "={{ $json.id }}",
           "mode": "id"
         },
-        "name": "Clínica de Odontologia",
+        "name": "Imobiliária Modelo",
         "automations": {
           "settings": {
             "auto_resolve_conversation_on_task_end": false,
@@ -282,7 +282,7 @@
             {
               "id": "505da86d-3578-43ff-a446-5569a2328142",
               "name": "etapas",
-              "value": "=[\n  { \"etapa\": \"Novo Lead\", \"cor\": \"#5B9BD5\", \"descricao\": \"Primeiro contato\" },\n  {\n    \"etapa\": \"Qualificado\",\n    \"cor\": \"#F4C542\",\n    \"descricao\": \"IA coletando informações\"\n  },\n  {\n    \"etapa\": \"Agendado\",\n    \"cor\": \"#6BBF8A\",\n    \"descricao\": \"Agendado, pendente confirmação\"\n  },\n  {\n    \"etapa\": \"Confirmado\",\n    \"cor\": \"#9B7ED8\",\n    \"descricao\": \"Paciente confirmou presença\"\n  },\n  {\n    \"etapa\": \"Compareceu\",\n    \"cor\": \"#3A8F5C\",\n    \"descricao\": \"Paciente compareceu à consulta\"\n  },\n  {\n    \"etapa\": \"No-show\",\n    \"cor\": \"#E8735A\",\n    \"descricao\": \"Paciente não compareceu\"\n  },\n  {\n    \"etapa\": \"Perdido (reativar)\",\n    \"cor\": \"#A0A0A0\",\n    \"descricao\": \"Paciente cancelou/não respondeu\",\n    \"perdida\": true\n  },\n  {\n    \"etapa\": \"Pós-venda\",\n    \"cor\": \"#5CC0C7\",\n    \"descricao\": \"Follow-up pós-consulta\"\n  }\n]",
+              "value": "=[\n  { \"etapa\": \"Novo Lead\", \"cor\": \"#5B9BD5\", \"descricao\": \"Primeiro contato com a imobiliária\" },\n  {\n    \"etapa\": \"Qualificado\",\n    \"cor\": \"#F4C542\",\n    \"descricao\": \"IA coletando informações do lead\"\n  },\n  {\n    \"etapa\": \"Visita Agendada\",\n    \"cor\": \"#6BBF8A\",\n    \"descricao\": \"Visita ou reunião agendada\"\n  },\n  {\n    \"etapa\": \"Confirmado\",\n    \"cor\": \"#9B7ED8\",\n    \"descricao\": \"Lead confirmou presença na visita\"\n  },\n  {\n    \"etapa\": \"Compareceu\",\n    \"cor\": \"#3A8F5C\",\n    \"descricao\": \"Lead compareceu à visita\"\n  },\n  {\n    \"etapa\": \"No-show\",\n    \"cor\": \"#E8735A\",\n    \"descricao\": \"Lead não compareceu à visita\"\n  },\n  {\n    \"etapa\": \"Perdido (reativar)\",\n    \"cor\": \"#A0A0A0\",\n    \"descricao\": \"Lead cancelou ou não respondeu\",\n    \"perdida\": true\n  },\n  {\n    \"etapa\": \"Pós-visita\",\n    \"cor\": \"#5CC0C7\",\n    \"descricao\": \"Follow-up pós-visita ao imóvel\"\n  }\n]",
               "type": "array"
             }
           ]
